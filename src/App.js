@@ -1,101 +1,79 @@
-import "./App.css";
+import './App.scss';
+import React from "react";
 
-const mainuser = {
-  name: "Hannah Nguyen",
-  age: "21",
-  university: "University of Michigan",
-};
 
-const buttons = [
-  {
-    imgUrl: "https://wallpapercave.com/wp/oEpySxa.jpg",
-    ishello: false,
-    imagesize: 90,
-    id: 1,
-  },
-  {
-    imgUrl:
-      "https://cdn.britannica.com/98/163898-050-B2E2A704/British-sensation-Adele.jpg",
-    ishello: true,
-    imagesize: 90,
-    id: 2,
-  },
-  {
-    imgUrl:
-      "https://c4.wallpaperflare.com/wallpaper/662/242/353/katherine-langford-celebrities-girls-actress-wallpaper-preview.jpg",
-    ishello: false,
-    imagesize: 90,
-    id: 3,
-  },
-  {
-    imgUrl:
-      "https://www.format.com/wp-content/uploads/kawai-matthews-kanye-west-1.jpg",
-    ishello: false,
-    imagesize: 90,
-    id: 4,
-  },
-  {
-    imgUrl: "https://images4.alphacoders.com/248/248358.jpg",
-    ishello: false,
-    imagesize: 90,
-    id: 5,
-  },
-];
-
-function HelloButton() {
-  const handleButton = (button) => {
-    if (button.ishello) {
-      alert("Hello, it's me. You won, but do you?");
-    } else {
-      if (button.id === 1) {
-        alert("When in doubt, look intelligent");
-      }
-      if (button.id === 3) {
-        alert("When you look like your passport, it's time to go home");
-      }
-      if (button.id === 4) {
-        alert("Do not take life seriously, you won't make it out alive anyway");
-      }
-      if (button.id === 5) {
-        alert("This is so skibidi");
-      }
-    }
-  };
-
-  return (
-    <ul>
-      {buttons.map((button) => (
-        <li key={button.id}>
-          <button onClick={() => handleButton(button)}>
-            <img
-              src={button.imgUrl}
-              style={{
-                width: button.imagesize,
-                height: button.imagesize,
-              }}
-              alt="button"
-            />
-          </button>
-        </li>
-      ))}
-    </ul>
-  );
+function App() {
+    
+    return (
+            <div className="App">
+            <div className="Credit">Credits go to awesome Hannah and the boy band</div>
+            <div className="App-header">
+                <h1> Latest Weather <br /> at Elysium Planitia</h1>
+                <p> InSight has temporarily suspended daily weather measurements. As <br />more data becomes available, it will appear below. Meanwhile, get the <br />latest Mars weather from the <a href="https://science.nasa.gov/mission/msl-curiosity/science-instruments/#h-rover-environmental-monitoring-station-rems" target="_blank" rel="noopener noreferrer"> Curiosity Rover</a>. </p>
+                <div className="today-weather-info">
+                    <div className="today-weather-card-1">
+                        <h1> Sol 681 </h1>
+                        <p> October 25, 2020</p>
+                    </div>
+                    <div className="today-weather-card-2">
+                        <p> High: 24 F/C </p>
+                        <p> Low: -139.8 F/C </p>
+                    </div>
+                </div>
+                <div className="weather-info">
+                    <div className="weather-card">
+                        <h1> Sol 675 </h1>
+                        <p> Oct. 19 </p>
+                        <hr />
+                        <p> High: 3.4 F</p>
+                        <p> Low: -142.4 F</p>
+                    </div>
+                    <div className="weather-card">
+                        <h1> Sol 676 </h1>
+                        <p> Oct. 20 </p>
+                        <hr />
+                        <p> High: 2.3 F</p>
+                        <p> Low: -142.4 F</p>
+                    </div>
+                    <div className="weather-card">
+                        <h1> Sol 677 </h1>
+                        <p> Oct. 21 </p>
+                        <hr />
+                        <p> High: 1.7 F</p>
+                        <p> Low: -143 F</p>
+                    </div>
+                    <div className="weather-card">
+                        <h1> Sol 678 </h1>
+                        <p> Oct. 22 </p>
+                        <hr />
+                        <p> High: 15.7 F</p>
+                        <p> Low: -143.9 F</p>
+                    </div>
+                    <div className="weather-card">
+                        <h1> Sol 679 </h1>
+                        <p> Oct. 23 </p>
+                        <hr />
+                        <p> High: 11.2 F</p>
+                        <p> Low: -142 F</p>
+                    </div>
+                    <div className="weather-card">
+                        <h1> Sol 680 </h1>
+                        <p> Oct. 24 </p>
+                        <hr />
+                        <p> High: 4.5 F</p>
+                        <p> Low: -142.3 F</p>
+                    </div>
+                    <div className="weather-card">
+                        <h1> Sol 681 </h1>
+                        <p> Oct. 25 </p>
+                        <hr />
+                        <p> High: 24 F</p>
+                        <p> Low: -139.8 F</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+    );
 }
 
-function HelloWorld() {
-  return (
-    <>
-      <h1>Hello everyone. My name is {mainuser.name}</h1>
-      <p>
-        I am {mainuser.age} and I am studying at {mainuser.university}
-      </p>
-      <p>Please have fun</p>
-      <div>
-        <h1>Hello World</h1>
-        <HelloButton />
-      </div>
-    </>
-  );
-}
-
-export default HelloWorld;
+export default App;
