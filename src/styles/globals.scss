@@ -1,0 +1,9 @@
+@import './fonts';
+@import './colors';
+@import './sizes';
+
+html, body {
+    font-family: $font-family-sans-serif;
+    color: $text-color;
+}
+
