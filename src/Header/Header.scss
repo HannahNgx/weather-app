@@ -9,8 +9,8 @@
 
   .Header__Credit {
     width: 100%;
-    background: $credit-color;
-    color: $text-color;
+    background: $primary-color;
+    color: $secondary-color;
     padding: 0.625rem $rem-0;
     text-align: right;
     position: absolute;
@@ -18,7 +18,7 @@
   }
 
   h1 {
-    color: $text-color;
+    color: $secondary-color;
     margin: 2.813rem;
     font-size: $font-xxlarge;
     transform: scaleY(0.9);
