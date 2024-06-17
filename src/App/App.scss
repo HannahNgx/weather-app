@@ -1,9 +1,9 @@
-@import "../styles/globals";
+@import '../styles/globals';
 
 .App {
   height: 100vh;
   display: flex;
-  background: url("../styles/pictures/background-nasa.jpg") no-repeat center
+  background: url('../styles/pictures/background-nasa.jpg') no-repeat center
     center fixed;
   background-size: cover;
 }
