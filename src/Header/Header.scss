@@ -11,7 +11,7 @@
     width: 100%;
     background: $credit-color;
     color: $text-color;
-    padding: $rem-0_625 $rem-0;
+    padding: 0.625rem $rem-0;
     text-align: right;
     position: absolute;
     font-style: italic;
@@ -19,7 +19,7 @@
 
   h1 {
     color: $text-color;
-    margin: $rem-2_813;
+    margin: 2.813rem;
     font-size: $font-xxlarge;
     transform: scaleY(0.9);
   }
