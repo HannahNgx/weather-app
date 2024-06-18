@@ -2,16 +2,16 @@
 
 .Header {
   text-align: center;
-  padding: $rem-0;
+  padding: 0rem;
   display: flex;
-  margin-left: $rem-0;
-  margin-top: $rem-0;
+  margin-left: 0rem;
+  margin-top: 0rem;
 
   .Header__Credit {
     width: 100%;
     background: $primary-color;
     color: $secondary-color;
-    padding: 0.625rem $rem-0;
+    padding: 0.625rem 0rem;
     text-align: right;
     position: absolute;
     font-style: italic;
