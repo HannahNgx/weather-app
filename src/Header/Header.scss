@@ -1,0 +1,26 @@
+@import '../styles/globals';
+
+.Header {
+  text-align: center;
+  padding: 0rem;
+  display: flex;
+  margin-left: 0rem;
+  margin-top: 0rem;
+
+  .Header__Credit {
+    width: 100%;
+    background: $primary-color;
+    color: $secondary-color;
+    padding: 0.625rem 0rem;
+    text-align: right;
+    position: absolute;
+    font-style: italic;
+  }
+
+  h1 {
+    color: $secondary-color;
+    margin: 2.813rem;
+    font-size: $font-xxlarge;
+    transform: scaleY(0.9);
+  }
+}
