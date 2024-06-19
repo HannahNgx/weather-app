@@ -1,6 +1,7 @@
 # Internal React Challenge
 
 ## Overview
+
 This is a project aimed at honing our frontend skills!
 More info about the project can be found [here](https://m-rets.atlassian.net/wiki/spaces/MS/pages/803504202/Coding+Challenges+Frontend+Edition).
 

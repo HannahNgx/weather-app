@@ -1,9 +1,8 @@
 @import '../styles/globals';
 
 .Header {
-  text-align: center;
+  text-align: left;
   padding: 0rem;
-  display: flex;
   margin-left: 0rem;
   margin-top: 0rem;
 
@@ -19,8 +18,17 @@
 
   h1 {
     color: $secondary-color;
-    margin: 2.813rem;
+    margin-left: 2.813rem;
+    margin-top: 3rem;
     font-size: $font-xxlarge;
+    transform: scaleY(0.9);
+  }
+
+  p {
+    color: $secondary-color;
+    margin-left: 3rem;
+    margin-top: 0rem;
+    font-size: $font-xlarge;
     transform: scaleY(0.9);
   }
 }
