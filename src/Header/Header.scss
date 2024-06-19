@@ -16,15 +16,16 @@
     font-style: italic;
   }
 
-  h1 {
+  .Header__Title {
     color: $secondary-color;
     margin-left: 2.813rem;
     margin-top: 3rem;
     font-size: $font-xxlarge;
     transform: scaleY(0.9);
+    font-weight: $font-weight-bold;
   }
 
-  p {
+  .Header__CurrentTime {
     color: $secondary-color;
     margin-left: 3rem;
     margin-top: 0rem;
