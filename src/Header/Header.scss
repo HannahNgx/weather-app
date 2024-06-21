@@ -2,15 +2,15 @@
 
 .Header {
   text-align: left;
-  padding: 0rem;
-  margin-left: 0rem;
-  margin-top: 0rem;
+  padding: $margin-default;
+  margin-left: $margin-default;
+  margin-top: $margin-default;
 
   .Header__Credit {
     width: 100%;
     background: $primary-color;
     color: $secondary-color;
-    padding: 0.625rem 0rem;
+    padding: 0.625rem $margin-default;
     text-align: right;
     position: absolute;
     font-style: italic;
@@ -18,8 +18,8 @@
 
   .Header__Title {
     color: $secondary-color;
-    margin-left: 2.813rem;
-    margin-top: 3rem;
+    margin-left: $margin-large;
+    margin-top: $margin-large;
     font-size: $font-xxlarge;
     transform: scaleY(0.9);
     font-weight: $font-weight-bold;
@@ -27,8 +27,8 @@
 
   .Header__CurrentTime {
     color: $secondary-color;
-    margin-left: 3rem;
-    margin-top: 0rem;
+    margin-left: $margin-large;
+    margin-top: $margin-default;
     font-size: $font-xlarge;
     transform: scaleY(0.9);
   }
