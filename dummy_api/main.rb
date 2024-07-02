@@ -1,5 +1,9 @@
 require 'sinatra'
 
+get '/' do
+  haml :index
+end
+
 get '/insight_weather' do
   content_type :json
   {
@@ -138,3 +142,17 @@ get '/insight_weather' do
     }
   }.to_json
 end
+
+__END__
+
+@@ layout
+%html
+  != yield
+
+@@ index
+%h1 Dummy API
+%h2 It might not be pretty, but it's alive!
+%p Head over to one of the following:
+%ol
+  %li
+    %a{ href: '/insight_weather' } GET /insight_weather

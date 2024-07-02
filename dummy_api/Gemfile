@@ -3,3 +3,4 @@ ruby '~> 3.3.3'
 
 gem 'sinatra'
 gem 'rackup'
+gem 'haml'
