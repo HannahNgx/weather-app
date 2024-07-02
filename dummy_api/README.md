@@ -33,5 +33,3 @@ This API was created for development, so that it can be run locally and return m
 ### I'm not seeing the changes I made to the API
 
 **Solution**: The current API is very slim and does not use any auto-reload. When `main.rb` is changed, you need to stop and restart the server.
-
-
