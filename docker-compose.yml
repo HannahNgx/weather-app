@@ -10,3 +10,12 @@ services:
     volumes:
       - .:/usr/src/app/ui
       - /usr/src/app/ui/node_modules
+
+  dummy_api:
+    build:
+      context: ./dummy_api
+    ports:
+      - "4567:4567"
+    stdin_open: true
+    volumes:
+      - ./dummy_api:/app
