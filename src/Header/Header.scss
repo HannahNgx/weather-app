@@ -2,9 +2,6 @@
 
 .Header {
   text-align: left;
-  padding: $margin-default;
-  margin-left: $margin-default;
-  margin-top: $margin-default;
 
   .Header__Credit {
     width: 100%;
@@ -16,20 +13,20 @@
     font-style: italic;
   }
 
-  .Header__Title {
+  .Header__Title,
+  .Header__CurrentTime {
     color: $secondary-color;
     margin-left: $margin-large;
+    transform: scaleY(0.9);
+  }
+
+  .Header__Title {
     margin-top: $margin-large;
     font-size: $font-xxlarge;
-    transform: scaleY(0.9);
     font-weight: $font-weight-bold;
   }
 
   .Header__CurrentTime {
-    color: $secondary-color;
-    margin-left: $margin-large;
-    margin-top: $margin-default;
     font-size: $font-xlarge;
-    transform: scaleY(0.9);
   }
 }
