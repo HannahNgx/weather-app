@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { formatDate } from '../helpers/date.helpers';
 
 function Header() {
-  const [currentTime, setcurrentTime] = useState(new Date());
+  const [currentTime, setCurrentTime] = useState(new Date());
   const updateTime = () => {
-    setcurrentTime(new Date());
+    setCurrentTime(new Date());
   };
   setInterval(updateTime, 1000);
   return (
