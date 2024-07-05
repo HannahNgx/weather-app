@@ -1,5 +1,5 @@
 import './Header.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { formatDate } from '../helpers/date.helpers';
 
 function Header() {
@@ -7,7 +7,10 @@ function Header() {
   const updateTime = () => {
     setCurrentTime(new Date());
   };
-  setInterval(updateTime, 1000);
+  useEffect(() => {
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, [currentTime]);
   return (
     <div className="Header">
       <div className="Header__Credit">Credits go to Hannah</div>
