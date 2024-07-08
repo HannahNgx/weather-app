@@ -17,8 +17,8 @@ function CurrentTemp() {
     }, []);
   return (
     <div className="CurrentTemp">
-        <div className="CurrentTemp__High"> High: {highestTemp} </div>
-        <div className="CurrentTemp__Low"> Low: {lowestTemp} </div>
+        <div className="CurrentTemp__High"> High: {highestTemp} ºC</div>
+        <div className="CurrentTemp__Low"> Low: {lowestTemp} ºC</div>
     </div>
   );
 }
