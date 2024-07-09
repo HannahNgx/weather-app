@@ -1,3 +1,3 @@
-import CurrentTemp from './CurrentTemp.component';
+import CurrentTemp from './CurrentTemp.container';
 
 export default CurrentTemp;

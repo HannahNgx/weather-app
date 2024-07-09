@@ -1,6 +1,6 @@
 import './App.scss';
 import Header from '../Header/Header.component';
-import CurrentTemp from '../CurrentTemp/CurrentTemp.component';
+import CurrentTemp from '../CurrentTemp/CurrentTemp.container';
 import React from 'react';
 
 function App() {
