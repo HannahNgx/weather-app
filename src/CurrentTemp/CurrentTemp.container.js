@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CurrentTempComponent from './CurrentTemp.component';
 
 function CurrentTemp() {
-  const [currentTemp, setCurrentTemp] = useState({ lowest: null, highest: null });
-  const [error, setError] = useState(null);
+  const [currentTemp, setCurrentTemp] = useState({ lowest: '(no data)', highest: '(no data)' });
 
   const fetchCurrentTemp = async () => {
     try {
@@ -11,23 +10,31 @@ function CurrentTemp() {
       const data = await response.json();
       const sol_keys = Object.keys(data);
       const { PRE } = data[sol_keys[0]];
+
+      let highestTemp = '(no data)';
+      let lowestTemp = '(no data)';
+
+      if (PRE.mx !== undefined) {
+        highestTemp = PRE.mx.toFixed(2);
+      }
+      if (PRE.mn !== undefined) {
+        lowestTemp = PRE.mn.toFixed(2);
+      }
+
       setCurrentTemp({
-        highest: PRE.mx.toFixed(2),
-        lowest: PRE.mn.toFixed(2),
+        highest: highestTemp,
+        lowest: lowestTemp,
       });
     } catch (error) {
-      setError(true);
+      setCurrentTemp({ lowest: '(no data)', highest: '(no data)' });
     }
-  }
+  };
 
   useEffect(() => {
     fetchCurrentTemp();
   }, []);
 
-  if (error) {
-    return <CurrentTempComponent currentTemp={{ lowest: '(no data)', highest: '(no data)' }} />;
-  }
   return <CurrentTempComponent currentTemp={currentTemp} />;
-};
+}
 
 export default CurrentTemp;
