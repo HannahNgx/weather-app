@@ -6,7 +6,6 @@
   .Header__Credit {
     width: 100%;
     background: $primary-color;
-    color: $secondary-color;
     padding: 0.625rem $margin-default;
     text-align: right;
     position: absolute;
@@ -15,7 +14,6 @@
 
   .Header__Title,
   .Header__CurrentTime {
-    color: $secondary-color;
     margin-left: $margin-large;
     transform: scaleY(0.9);
   }
