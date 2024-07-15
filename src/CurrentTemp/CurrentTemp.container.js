@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CurrentTempComponent from './CurrentTemp.component';
 
 function CurrentTemp() {
-  const [currentTemp, setCurrentTemp] = useState({ lowest: '(no data)', highest: '(no data)' });
+  const [currentTemp, setCurrentTemp] = useState({ lowest: null, highest: null });
 
   const fetchCurrentTemp = async () => {
     try {
