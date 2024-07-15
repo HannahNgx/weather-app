@@ -11,7 +11,7 @@ export function formatDate(date, includeTime = true) {
   if (!includeTime) {
     return formattedDate.replace(day, day + daySuffix);
   }
-  
+
   const time = date.toLocaleTimeString('en-US', {
     hour12: false,
     hour: '2-digit',
