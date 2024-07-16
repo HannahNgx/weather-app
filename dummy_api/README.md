@@ -5,6 +5,7 @@
 An API with static mock responses to use for development. Not the smartest of its kind.
 
 ## Background
+
 NASA's [InSight API](https://api.nasa.gov/#insight) seems to currently be lacking quite a bit of data.
 That makes it less than ideal to work with for the purposes of the app.
 This API was created for development, so that it can be run locally and return mock endpoints with static responses matching the ones that NASA’s API would return.

@@ -15,7 +15,7 @@ services:
     build:
       context: ./dummy_api
     ports:
-      - "4567:4567"
+      - '4567:4567'
     stdin_open: true
     volumes:
       - ./dummy_api:/app

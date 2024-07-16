@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import apiClient from '../api';
 import CurrentTempComponent from './CurrentTemp.component';
 
 function CurrentTemp() {
-  const [currentTemp, setCurrentTemp] = useState({ lowest: null, highest: null });
+  const [currentTemp, setCurrentTemp] = useState({
+    lowest: null,
+    highest: null,
+  });
 
   const fetchCurrentTemp = async () => {
     try {
-      const response = await fetch('http://localhost:4567/insight_weather');
-      const data = await response.json();
+      const data = await apiClient.getCurrentTemp();
       const sol_keys = Object.keys(data);
       const { PRE } = data[sol_keys[0]];
 

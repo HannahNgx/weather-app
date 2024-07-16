@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
+import apiClient from '../api';
 import PastTempsComponent from './PastTemps.component';
-import { formatDate } from '../helpers/date.helpers'; 
+import { formatDate } from '../helpers/date.helpers';
 import { formatWeekday } from '../helpers/weekday.helpers';
 
 function PastTemps() {
@@ -8,11 +9,10 @@ function PastTemps() {
 
   const fetchPastTemps = async () => {
     try {
-      const response = await fetch('http://localhost:4567/insight_weather');
-      const data = await response.json();
-            
-      const temps = Object.keys(data).map((sol_key) => {
-        const { First_UTC, PRE } = data[sol_key];
+      const data = await apiClient.getPastTemps();
+      const temps = Object.keys(data)
+        .map((sol_key) => {
+          const { First_UTC, PRE } = data[sol_key];
 
           let weekdate = '(no data)';
           let day = '(no data)';
@@ -25,10 +25,10 @@ function PastTemps() {
           if (!!First_UTC) {
             day = formatDate(new Date(First_UTC), false);
           }
-          if (!!PRE.mx) {
+          if (!!PRE?.mx) {
             highestTemp = PRE.mx.toFixed(2);
           }
-          if (!!PRE.mn) {
+          if (!!PRE?.mn) {
             lowestTemp = PRE.mn.toFixed(2);
           }
 
@@ -38,11 +38,18 @@ function PastTemps() {
             highest: highestTemp,
             lowest: lowestTemp,
           };
-      });
-
+        })
+        .filter(({ weekday }) => !!weekday);
       setPastTemps(temps);
     } catch (error) {
-      setPastTemps({ weekday: '(no data)', date: '(no data)', highest: '(no data)', lowest: '(no data)' });
+      setPastTemps([
+        {
+          weekday: '(no data)',
+          date: '(no data)',
+          highest: '(no data)',
+          lowest: '(no data)',
+        },
+      ]);
     }
   };
 
@@ -50,23 +57,7 @@ function PastTemps() {
     fetchPastTemps();
   }, []);
 
-  const PastTempsCards = useMemo(() => (
-    pastTemps.map((temp, index) => (
-      <PastTempsComponent
-        key={index} 
-        weekday={temp.weekday}
-        date={temp.date}
-        highest={temp.highest}
-        lowest={temp.lowest}
-      />
-    ))
-  ), [pastTemps]);
-
-  return (
-    <div className="PastTempsCards">
-      {PastTempsCards}
-    </div>
-  );
+  return <PastTempsComponent pastTemps={pastTemps} />;
 }
 
 export default PastTemps;

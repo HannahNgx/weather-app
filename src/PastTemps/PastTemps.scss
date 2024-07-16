@@ -18,15 +18,15 @@
   font-size: $font-large;
   padding-top: $margin-larger;
   padding-bottom: $margin-larger;
-  .PastTempsCard__Weekday{
-      font-weight: $font-weight-semi-bold;
+  .PastTempsCard__Weekday {
+    font-weight: $font-weight-semi-bold;
   }
   .PastTempsCard__Date {
-      font-weight: $font-weight-light;
+    font-weight: $font-weight-light;
   }
   .PastTempsCard__High,
   .PastTempsCard__Low {
-      font-style: italic;
+    font-style: italic;
   }
 }
 
