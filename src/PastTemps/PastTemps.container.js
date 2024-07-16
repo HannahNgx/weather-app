@@ -19,16 +19,16 @@ function PastTemps() {
           let highestTemp = '(no data)';
           let lowestTemp = '(no data)';
 
-          if (sol_key && !!sol_key) {
+          if (!!sol_key) {
             weekdate = formatWeekday(sol_key);
           }
-          if (First_UTC && !!First_UTC) {
+          if (!!First_UTC) {
             day = formatDate(new Date(First_UTC), false);
           }
-          if (PRE && !!PRE.mx) {
+          if (!!PRE.mx) {
             highestTemp = PRE.mx.toFixed(2);
           }
-          if (PRE && !!PRE.mn) {
+          if (!!PRE.mn) {
             lowestTemp = PRE.mn.toFixed(2);
           }
 
