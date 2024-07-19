@@ -1,16 +1,16 @@
 @import '../styles/globals';
 
-.PastTempsCards {
+.WeatherCardsAll {
   align-items: center;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: $margin-larger;
-  margin-top: $margin-xlarge;
+  margin-top: $margin-large;
 }
 
-.PastTempsCard {
-  background-color: rgba(52, 152, 219, 0.7);
+.WeatherCard {
+  background-color: $sixth-color;
   text-align: center;
   border-radius: $margin-large;
   line-height: $margin-large;
@@ -18,15 +18,21 @@
   font-size: $font-large;
   padding-top: $margin-larger;
   padding-bottom: $margin-larger;
-  .PastTempsCard__Weekday {
+  .WeatherCard__Weekday {
     font-weight: $font-weight-semi-bold;
   }
-  .PastTempsCard__Date {
+  .WeatherCard__Date {
     font-weight: $font-weight-light;
   }
-  .PastTempsCard__High,
-  .PastTempsCard__Low {
+  .WeatherCard__TempHigh,
+  .WeatherCard__TempLow {
     font-style: italic;
+    color: $third-color;
+  }
+  .WeatherCard__WindHigh,
+  .WeatherCard__WindLow {
+    font-style: italic;
+    color: $fourth-color;
   }
 }
 

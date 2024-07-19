@@ -3,12 +3,12 @@ class APIClient {
     this.hostname = 'http://localhost:4567';
   }
 
-  async getCurrentTemp() {
+  async getCurrentWeather() {
     const response = await fetch(`${this.hostname}/insight_weather`);
     return response.json();
   }
 
-  async getPastTemps() {
+  async getWeatherCards() {
     const response = await fetch(`${this.hostname}/insight_weather`);
     return response.json();
   }

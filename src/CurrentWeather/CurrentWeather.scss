@@ -1,0 +1,16 @@
+@import '../styles/globals';
+
+.CurrentWeather {
+  text-align: center;
+  transform: scaleY(0.9);
+  font-size: $font-xlarge;
+  font-style: italic;
+  .CurrentWeather__TempHigh,
+  .CurrentWeather__TempLow {
+    color: $third-color;
+  }
+  .CurrentWeather__WindHigh,
+  .CurrentWeather__WindLow {
+    color: $fourth-color;
+  }
+}
