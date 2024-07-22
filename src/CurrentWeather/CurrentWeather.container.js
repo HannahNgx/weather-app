@@ -11,11 +11,6 @@ function CurrentWeather() {
       const sol_keys = data.sol_keys;
       const lastKey = sol_keys[sol_keys.length - 1];
       const { AT, HWS } = data[lastKey];
-      console.log(data[lastKey]);
-      console.log(lastKey);
-      console.log(sol_keys);
-      console.log(Object.keys(data.sol_keys));
-      console.log(data);
 
       let highestTemp = '(no data)';
       let lowestTemp = '(no data)';
