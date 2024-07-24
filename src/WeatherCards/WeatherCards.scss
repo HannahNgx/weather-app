@@ -27,12 +27,12 @@
   .WeatherCard__TempHigh,
   .WeatherCard__TempLow {
     font-style: italic;
-    color: $third-color;
+    color: $temperature-color;
   }
   .WeatherCard__WindHigh,
   .WeatherCard__WindLow {
     font-style: italic;
-    color: $fourth-color;
+    color: $wind-color;
   }
 }
 
