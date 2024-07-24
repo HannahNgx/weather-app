@@ -1,4 +1,5 @@
 import './CurrentWeather.scss';
+import PropTypes from 'prop-types';
 
 function CurrentWeatherComponent({ currentWeather }) {
   return (
@@ -10,5 +11,8 @@ function CurrentWeatherComponent({ currentWeather }) {
     </div>
   );
 }
+CurrentWeatherComponent.propTypes = {
+  currentWeather: PropTypes.object.isRequired,
+};
 
 export default CurrentWeatherComponent;

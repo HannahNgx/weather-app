@@ -1,5 +1,6 @@
 import './WeatherCards.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function WeatherCardsComponent({ weatherCards }) {
   return (
@@ -17,6 +18,9 @@ function WeatherCardsComponent({ weatherCards }) {
       ))}
     </div>
   );
+}
+WeatherCardsComponent.propTypes = {
+  weatherCards: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default WeatherCardsComponent;
