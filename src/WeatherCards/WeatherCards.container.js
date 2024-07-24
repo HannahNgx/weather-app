@@ -3,6 +3,7 @@ import apiClient from '../api';
 import WeatherCardsComponent from './WeatherCards.component';
 import { formatDate } from '../helpers/date.helpers';
 import { formatWeekday } from '../helpers/weekday.helpers';
+import { WEATHER_DEFAULTS } from '../constants';
 
 function WeatherCards() {
   const [weatherCards, setWeatherCards] = useState([]);
@@ -14,12 +15,7 @@ function WeatherCards() {
         .map((sol_key) => {
           const { First_UTC, AT, HWS } = data[sol_key];
 
-          let weekdate = '(no data)';
-          let day = '(no data)';
-          let highestTemp = '(no data)';
-          let lowestTemp = '(no data)';
-          let highestWind = '(no data)';
-          let lowestWind = '(no data)';
+          let { weekdate, day, highestTemp, lowestTemp, highestWind, lowestWind } = {...WEATHER_DEFAULTS};
 
           if (!!sol_key) {
             weekdate = formatWeekday(sol_key);
@@ -52,16 +48,7 @@ function WeatherCards() {
         .filter(({ weekday }) => !!weekday);
       setWeatherCards(temps);
     } catch (error) {
-      setWeatherCards([
-        {
-          weekday: '(no data)',
-          date: '(no data)',
-          highest: '(no data)',
-          lowest: '(no data)',
-          highestWind: '(no data)',
-          lowestWind: '(no data)'
-        },
-      ]);
+      setWeatherCards([WEATHER_DEFAULTS]);
     }
   };
 

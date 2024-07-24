@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import apiClient from '../api';
 import CurrentWeatherComponent from './CurrentWeather.component';
+import { WEATHER_DEFAULTS } from '../constants';
 
 function CurrentWeather() {
   const [currentWeather, setCurrentWeather] = useState({});
@@ -12,10 +13,7 @@ function CurrentWeather() {
       const lastKey = sol_keys[sol_keys.length - 1];
       const { AT, HWS } = data[lastKey];
 
-      let highestTemp = '(no data)';
-      let lowestTemp = '(no data)';
-      let highestWind = '(no data)';
-      let lowestWind = '(no data)';
+      let { highestTemp, lowestTemp, highestWind, lowestWind } = {...WEATHER_DEFAULTS};
 
       if (!!AT.mx) {
         highestTemp = AT.mx.toFixed(2);
@@ -38,7 +36,7 @@ function CurrentWeather() {
       });
     } catch (error) {
       //If we can't see the errors that we put in try, we should put console.log(error) here too
-      setCurrentWeather({ lowestTemp: '(no data)', highestTemp: '(no data)', lowestWind: '(no data)', highestWind: '(no data)' });
+      setCurrentWeather(WEATHER_DEFAULTS);
     }
   };
 
