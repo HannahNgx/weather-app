@@ -3,7 +3,7 @@ import apiClient from '../api';
 import CurrentWeatherComponent from './CurrentWeather.component';
 
 function CurrentWeather() {
-  const [CurrentWeather, setCurrentWeather] = useState({});
+  const [currentWeather, setCurrentWeather] = useState({});
 
   const fetchCurrentWeather = async () => {
     try {
@@ -46,7 +46,7 @@ function CurrentWeather() {
     fetchCurrentWeather();
   }, []);
 
-  return <CurrentWeatherComponent CurrentWeather={CurrentWeather} />;
+  return <CurrentWeatherComponent currentWeather={currentWeather} />;
 }
 
 export default CurrentWeather;
