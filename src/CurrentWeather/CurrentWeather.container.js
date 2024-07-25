@@ -9,8 +9,8 @@ function CurrentWeather() {
   const fetchCurrentWeather = async () => {
     try {
       const data = await apiClient.getCurrentWeather();
-      const sol_keys = data.sol_keys;
-      const lastKey = sol_keys[sol_keys.length - 1];
+      const solKeys = data.sol_keys;
+      const lastKey = solKeys[solKeys.length - 1];
       const { AT, HWS } = data[lastKey];
 
       let { highestTemp, lowestTemp, highestWind, lowestWind } = {...WEATHER_DEFAULTS};
