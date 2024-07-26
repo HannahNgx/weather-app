@@ -5,4 +5,6 @@ export const WEATHER_DEFAULTS = {
     lowestTemp: '(no data)',
     highestWind: '(no data)',
     lowestWind: '(no data)',
+    highestPre: '(no data)',
+    lowestPre: '(no data)',
 }

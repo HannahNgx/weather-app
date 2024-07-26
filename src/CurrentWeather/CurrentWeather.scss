@@ -3,7 +3,7 @@
 .CurrentWeather {
   text-align: center;
   transform: scaleY(0.9);
-  font-size: $font-xlarge;
+  font-size: $font-larger;
   font-style: italic;
   .CurrentWeather__TempHigh,
   .CurrentWeather__TempLow {
@@ -12,5 +12,10 @@
   .CurrentWeather__WindHigh,
   .CurrentWeather__WindLow {
     color: $wind-color;
+  }
+  .CurrentWeather__PreHigh,
+  .CurrentWeather__PreLow {
+    font-style: italic;
+    color: $pressure-color;
   }
 }

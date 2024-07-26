@@ -8,6 +8,8 @@ function CurrentWeatherComponent({ currentWeather }) {
       <div className="CurrentWeather__TempLow"><strong>Low Temp:</strong> {currentWeather.lowestTemp} ºC</div>
       <div className="CurrentWeather__WindHigh"><strong>Max Wind Sp:</strong> {currentWeather.highestWind} m/s</div>
       <div className="CurrentWeather__WindLow"><strong>Min Wind Sp:</strong> {currentWeather.lowestWind} m/s</div>
+      <div className="CurrentWeather__PreLow"><strong>High Pressure:</strong> {currentWeather.highestPre} Pa</div>
+      <div className="CurrentWeather__PreHigh"><strong>Low Pressure:</strong> {currentWeather.lowestPre} Pa</div>
     </div>
   );
 }

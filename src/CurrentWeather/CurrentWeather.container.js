@@ -11,9 +11,9 @@ function CurrentWeather() {
       const data = await apiClient.getCurrentWeather();
       const solKeys = data.sol_keys;
       const lastKey = solKeys[solKeys.length - 1];
-      const { AT, HWS } = data[lastKey];
+      const { AT, HWS, PRE } = data[lastKey];
 
-      let { highestTemp, lowestTemp, highestWind, lowestWind } = {...WEATHER_DEFAULTS};
+      let { highestTemp, lowestTemp, highestWind, lowestWind, highestPre, lowestPre } = {...WEATHER_DEFAULTS};
 
       if (!!AT.mx) {
         highestTemp = AT.mx.toFixed(2);
@@ -27,12 +27,20 @@ function CurrentWeather() {
       if (!!HWS.mn) {
         lowestWind = HWS.mn.toFixed(2);
       }
+      if (!!PRE.mx) {
+        highestPre = PRE.mx.toFixed(2);
+      }
+      if (!!PRE.mn) {
+        lowestPre = PRE.mn.toFixed(2);
+      }
 
       setCurrentWeather({
         highestTemp,
         lowestTemp,
         highestWind,
-        lowestWind
+        lowestWind,
+        highestPre, 
+        lowestPre
       });
     } catch (error) {
       //If we can't see the errors that we put in try, we should put console.log(error) here too

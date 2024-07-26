@@ -13,9 +13,9 @@ function WeatherCards() {
       const data = await apiClient.getWeatherCards();
       const temps = Object.keys(data)
         .map((sol_key) => {
-          const { First_UTC, AT, HWS } = data[sol_key];
+          const { First_UTC, AT, HWS, PRE } = data[sol_key];
 
-          let { weekdate, day, highestTemp, lowestTemp, highestWind, lowestWind } = {...WEATHER_DEFAULTS};
+          let { weekdate, day, highestTemp, lowestTemp, highestWind, lowestWind, highestPre, lowestPre } = {...WEATHER_DEFAULTS};
 
           if (!!sol_key) {
             weekdate = formatWeekday(sol_key);
@@ -35,6 +35,12 @@ function WeatherCards() {
           if (!!HWS?.mn) {
             lowestWind = HWS.mn.toFixed(2);
           }
+          if (!!PRE?.mx) {
+            highestPre = PRE.mx.toFixed(2);
+          }
+          if (!!PRE?.mn) {
+            lowestPre = PRE.mn.toFixed(2);
+          }
 
           return {
             weekday: weekdate,
@@ -42,7 +48,9 @@ function WeatherCards() {
             highestTemp,
             lowestTemp,
             highestWind,
-            lowestWind
+            lowestWind,
+            highestPre,
+            lowestPre
           };
         })
         .filter(({ weekday }) => !!weekday);

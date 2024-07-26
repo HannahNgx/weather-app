@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: $margin-larger;
-  margin-top: $margin-large;
+  margin-top: $margin-small;
 }
 
 .WeatherCard {
@@ -33,6 +33,11 @@
   .WeatherCard__WindLow {
     font-style: italic;
     color: $wind-color;
+  }
+  .WeatherCard__PreHigh,
+  .WeatherCard__PreLow {
+    font-style: italic;
+    color: $pressure-color;
   }
 }
 
