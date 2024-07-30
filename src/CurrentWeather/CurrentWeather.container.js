@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import apiClient from '../api';
 import CurrentWeatherComponent from './CurrentWeather.component';
 import { WEATHER_DEFAULTS } from '../constants';
+import { getFixedValue } from '../constants';
 
 function CurrentWeather() {
   const [currentWeather, setCurrentWeather] = useState({});
@@ -15,24 +16,12 @@ function CurrentWeather() {
 
       let { highestTemp, lowestTemp, highestWind, lowestWind, highestPre, lowestPre } = {...WEATHER_DEFAULTS};
 
-      if (!!AT.mx) {
-        highestTemp = AT.mx.toFixed(2);
-      }
-      if (!!AT.mn) {
-        lowestTemp = AT.mn.toFixed(2);
-      }
-      if (!!HWS.mx) {
-        highestWind = HWS.mx.toFixed(2);
-      }
-      if (!!HWS.mn) {
-        lowestWind = HWS.mn.toFixed(2);
-      }
-      if (!!PRE.mx) {
-        highestPre = PRE.mx.toFixed(2);
-      }
-      if (!!PRE.mn) {
-        lowestPre = PRE.mn.toFixed(2);
-      }
+      highestTemp = getFixedValue(AT?.mx, highestTemp);
+      lowestTemp = getFixedValue(AT?.mn, lowestTemp);
+      highestWind = getFixedValue(HWS?.mx, highestWind);
+      lowestWind = getFixedValue(HWS?.mn, lowestWind);
+      highestPre = getFixedValue(PRE?.mx, highestPre);
+      lowestPre = getFixedValue(PRE?.mn, lowestPre);
 
       setCurrentWeather({
         highestTemp,

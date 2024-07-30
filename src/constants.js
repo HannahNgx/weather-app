@@ -8,3 +8,7 @@ export const WEATHER_DEFAULTS = {
     highestPre: '(no data)',
     lowestPre: '(no data)',
 }
+
+export const getFixedValue = (newValue, currentValue) => {
+    return !!newValue ? newValue.toFixed(2) : currentValue;
+}

@@ -4,6 +4,7 @@ import WeatherCardsComponent from './WeatherCards.component';
 import { formatDate } from '../helpers/date.helpers';
 import { formatWeekday } from '../helpers/weekday.helpers';
 import { WEATHER_DEFAULTS } from '../constants';
+import { getFixedValue } from '../constants';
 
 function WeatherCards() {
   const [weatherCards, setWeatherCards] = useState([]);
@@ -23,24 +24,13 @@ function WeatherCards() {
           if (!!First_UTC) {
             day = formatDate(new Date(First_UTC), false);
           }
-          if (!!AT?.mx) {
-            highestTemp = AT.mx.toFixed(2);
-          }
-          if (!!AT?.mn) {
-            lowestTemp = AT.mn.toFixed(2);
-          }
-          if (!!HWS?.mx) {
-            highestWind = HWS.mx.toFixed(2);
-          }
-          if (!!HWS?.mn) {
-            lowestWind = HWS.mn.toFixed(2);
-          }
-          if (!!PRE?.mx) {
-            highestPre = PRE.mx.toFixed(2);
-          }
-          if (!!PRE?.mn) {
-            lowestPre = PRE.mn.toFixed(2);
-          }
+          
+          highestTemp = getFixedValue(AT?.mx, highestTemp);
+          lowestTemp = getFixedValue(AT?.mn, lowestTemp);
+          highestWind = getFixedValue(HWS?.mx, highestWind);
+          lowestWind = getFixedValue(HWS?.mn, lowestWind);
+          highestPre = getFixedValue(PRE?.mx, highestPre);
+          lowestPre = getFixedValue(PRE?.mn, lowestPre);
 
           return {
             weekday: weekdate,
