@@ -39,6 +39,11 @@
     font-style: italic;
     color: $pressure-color;
   }
+  .WeatherCard__Unit {
+    &.NotSelected {
+      font-weight: bold;
+    }
+  }
 }
 
 hr {

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import apiClient from '../api';
 import CurrentWeatherComponent from './CurrentWeather.component';
 import { WEATHER_DEFAULTS } from '../constants';
-import { getFixedValue } from '../constants';
+import { getFixedValue } from '../helpers/value.helpers';
 
-function CurrentWeather() {
+function CurrentWeather({ isCelsius, handleUnit }) {
   const [currentWeather, setCurrentWeather] = useState({});
 
   const fetchCurrentWeather = async () => {
@@ -14,7 +14,14 @@ function CurrentWeather() {
       const lastKey = solKeys[solKeys.length - 1];
       const { AT, HWS, PRE } = data[lastKey];
 
-      let { highestTemp, lowestTemp, highestWind, lowestWind, highestPre, lowestPre } = {...WEATHER_DEFAULTS};
+      let {
+        highestTemp,
+        lowestTemp,
+        highestWind,
+        lowestWind,
+        highestPre,
+        lowestPre,
+      } = { ...WEATHER_DEFAULTS };
 
       highestTemp = getFixedValue(AT?.mx, highestTemp);
       lowestTemp = getFixedValue(AT?.mn, lowestTemp);
@@ -28,8 +35,8 @@ function CurrentWeather() {
         lowestTemp,
         highestWind,
         lowestWind,
-        highestPre, 
-        lowestPre
+        highestPre,
+        lowestPre,
       });
     } catch (error) {
       //If we can't see the errors that we put in try, we should put console.log(error) here too
@@ -41,7 +48,13 @@ function CurrentWeather() {
     fetchCurrentWeather();
   }, []);
 
-  return <CurrentWeatherComponent currentWeather={currentWeather} />;
+  return (
+    <CurrentWeatherComponent
+      currentWeather={currentWeather}
+      isCelsius={isCelsius}
+      handleUnit={handleUnit}
+    />
+  );
 }
 
 export default CurrentWeather;
