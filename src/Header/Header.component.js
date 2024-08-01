@@ -1,6 +1,6 @@
 import './Header.scss';
 import React, { useState, useEffect } from 'react';
-import { formatDate } from '../helpers/date.helpers';
+import { formatDate } from '../helpers';
 
 function Header() {
   const [currentTime, setCurrentTime] = useState(new Date());

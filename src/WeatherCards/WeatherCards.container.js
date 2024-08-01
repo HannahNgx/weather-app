@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import apiClient from '../api';
 import WeatherCardsComponent from './WeatherCards.component';
-import { formatDate } from '../helpers/date.helpers';
-import { formatWeekday } from '../helpers/weekday.helpers';
-import { getFixedValue } from '../helpers/value.helpers';
+import { formatDate } from '../helpers';
+import { formatWeekday } from '../helpers';
+import { getFixedValue } from '../helpers';
 import { WEATHER_DEFAULTS } from '../constants';
 
 function WeatherCards({ isCelsius }) {

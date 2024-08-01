@@ -7,14 +7,15 @@ import React, { useState } from 'react';
 function App() {
   const [isCelsius, setIsCelsius] = useState(true);
 
-  const handleUnit = () => {
+  const toggleUnit = (e) => {
+    e.preventDefault();
     setIsCelsius(!isCelsius);
   };
 
   return (
     <div className="App">
       <Header />
-      <CurrentWeather isCelsius={isCelsius} handleUnit={handleUnit} />
+      <CurrentWeather isCelsius={isCelsius} toggleUnit={toggleUnit} />
       <WeatherCards isCelsius={isCelsius} />
     </div>
   );

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import apiClient from '../api';
 import CurrentWeatherComponent from './CurrentWeather.component';
 import { WEATHER_DEFAULTS } from '../constants';
-import { getFixedValue } from '../helpers/value.helpers';
+import { getFixedValue } from '../helpers';
 
-function CurrentWeather({ isCelsius, handleUnit }) {
+function CurrentWeather({ isCelsius, toggleUnit }) {
   const [currentWeather, setCurrentWeather] = useState({});
 
   const fetchCurrentWeather = async () => {
@@ -52,7 +52,7 @@ function CurrentWeather({ isCelsius, handleUnit }) {
     <CurrentWeatherComponent
       currentWeather={currentWeather}
       isCelsius={isCelsius}
-      handleUnit={handleUnit}
+      toggleUnit={toggleUnit}
     />
   );
 }

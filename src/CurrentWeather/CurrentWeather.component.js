@@ -1,10 +1,10 @@
 import React from 'react';
 import './CurrentWeather.scss';
 import PropTypes from 'prop-types';
-import { celsiusToFahrenheit } from '../helpers/tempChange.helpers';
-import { getFixedValue } from '../helpers/value.helpers';
+import { celsiusToFahrenheit } from '../helpers';
+import { getFixedValue } from '../helpers';
 
-function CurrentWeatherComponent({ currentWeather, isCelsius, handleUnit }) {
+function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
   const highTempCelsius = currentWeather.highestTemp;
   const lowTempCelsius = currentWeather.lowestTemp;
   const highTempFahrenheit = getFixedValue(
@@ -17,36 +17,36 @@ function CurrentWeatherComponent({ currentWeather, isCelsius, handleUnit }) {
       <div className="CurrentWeather__TempHigh">
         <strong>High Temp: </strong>{' '}
         {isCelsius ? highTempCelsius : highTempFahrenheit}
-        <span
-          className={`CurrentWeather__Unit ${isCelsius ? 'NotSelected' : ''}`}
-          onClick={handleUnit}
+        <button 
+          className={`CurrentWeather__Unit ${isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
+          onClick={toggleUnit}
         >
           ºC
-        </span>
+        </button>
         /
-        <span
-          className={`CurrentWeather__Unit ${!isCelsius ? 'NotSelected' : ''}`}
-          onClick={handleUnit}
+        <button 
+          className={`CurrentWeather__Unit ${!isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
+          onClick={toggleUnit}
         >
           ºF
-        </span>
+        </button>
       </div>
       <div className="CurrentWeather__TempLow">
         <strong>Low Temp:</strong>{' '}
         {isCelsius ? lowTempCelsius : lowTempFahrenheit}
-        <span
-          className={`CurrentWeather__Unit ${isCelsius ? 'NotSelected' : ''}`}
-          onClick={handleUnit}
+        <button
+          className={`CurrentWeather__Unit ${isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
+          onClick={toggleUnit}
         >
           ºC
-        </span>
+        </button>
         /
-        <span
-          className={`CurrentWeather__Unit ${!isCelsius ? 'NotSelected' : ''}`}
-          onClick={handleUnit}
+        <button
+          className={`CurrentWeather__Unit ${!isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
+          onClick={toggleUnit}
         >
           ºF
-        </span>
+        </button>
       </div>
       <div className="CurrentWeather__WindHigh">
         <strong>Max Wind Sp:</strong> {currentWeather.highestWind} m/s
@@ -66,7 +66,7 @@ function CurrentWeatherComponent({ currentWeather, isCelsius, handleUnit }) {
 CurrentWeatherComponent.propTypes = {
   currentWeather: PropTypes.object.isRequired,
   isCelsius: PropTypes.bool.isRequired,
-  handleUnit: PropTypes.func.isRequired,
+  toggleUnit: PropTypes.func.isRequired,
 };
 
 export default CurrentWeatherComponent;

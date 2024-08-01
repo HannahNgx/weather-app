@@ -1,8 +1,8 @@
 import './WeatherCards.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { celsiusToFahrenheit } from '../helpers/tempChange.helpers';
-import { getFixedValue } from '../helpers/value.helpers';
+import { celsiusToFahrenheit } from '../helpers';
+import { getFixedValue } from '../helpers';
 
 function WeatherCardsComponent({ weatherCards, isCelsius }) {
   const formatTemperature = (temp) => {
