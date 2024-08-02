@@ -15,7 +15,7 @@ function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
   return (
     <div className="CurrentWeather">
       <div className="CurrentWeather__TempHigh">
-        <strong>High Temp: </strong>{' '}
+        <b>High Temp: </b>{' '}
         {isCelsius ? highTempCelsius : highTempFahrenheit}
         <button 
           className={`CurrentWeather__Unit ${isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
@@ -32,7 +32,7 @@ function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
         </button>
       </div>
       <div className="CurrentWeather__TempLow">
-        <strong>Low Temp:</strong>{' '}
+        <b>Low Temp:</b>{' '}
         {isCelsius ? lowTempCelsius : lowTempFahrenheit}
         <button
           className={`CurrentWeather__Unit ${isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
@@ -49,16 +49,16 @@ function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
         </button>
       </div>
       <div className="CurrentWeather__WindHigh">
-        <strong>Max Wind Sp:</strong> {currentWeather.highestWind} m/s
+        <b>Max Wind Sp:</b> {currentWeather.highestWind} m/s
       </div>
       <div className="CurrentWeather__WindLow">
-        <strong>Min Wind Sp:</strong> {currentWeather.lowestWind} m/s
+        <b>Min Wind Sp:</b> {currentWeather.lowestWind} m/s
       </div>
       <div className="CurrentWeather__PreLow">
-        <strong>High Pressure:</strong> {currentWeather.highestPre} Pa
+        <b>High Pressure:</b> {currentWeather.highestPre} Pa
       </div>
       <div className="CurrentWeather__PreHigh">
-        <strong>Low Pressure:</strong> {currentWeather.lowestPre} Pa
+        <b>Low Pressure:</b> {currentWeather.lowestPre} Pa
       </div>
     </div>
   );

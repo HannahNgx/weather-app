@@ -32,7 +32,7 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
             <div className="WeatherCard__Date">{date}</div>
             <hr />
             <div className="WeatherCard__TempLow">
-              <strong>High Temp:</strong> {formatTemperature(highestTemp)}
+              <b>High Temp:</b> {formatTemperature(highestTemp)}
               <span
                 className={`WeatherCard__Unit ${isCelsius ? 'NotSelected' : ''}`}
               >
@@ -46,7 +46,7 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
               </span>
             </div>
             <div className="WeatherCard__TempHigh">
-              <strong>Low Temp:</strong> {formatTemperature(lowestTemp)}
+              <b>Low Temp:</b> {formatTemperature(lowestTemp)}
               <span
                 className={`WeatherCard__Unit ${isCelsius ? 'NotSelected' : ''}`}
               >
@@ -60,16 +60,16 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
               </span>
             </div>
             <div className="WeatherCard__WindLow">
-              <strong>Max Wind Sp:</strong> {highestWind} m/s
+              <b>Max Wind Sp:</b> {highestWind} m/s
             </div>
             <div className="WeatherCard__WindHigh">
-              <strong>Min Wind Sp:</strong> {lowestWind} m/s
+              <b>Min Wind Sp:</b> {lowestWind} m/s
             </div>
             <div className="WeatherCard__PreLow">
-              <strong>High Pre:</strong> {highestPre} Pa
+              <b>High Pre:</b> {highestPre} Pa
             </div>
             <div className="WeatherCard__PreHigh">
-              <strong>Low Pre:</strong> {lowestPre} Pa
+              <b>Low Pre:</b> {lowestPre} Pa
             </div>
           </div>
         ),
