@@ -1,7 +1,7 @@
 import './WeatherCards.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CardsUnitComponent } from '../Unit/Unit.component';
+import { UnitComponent } from '../Unit/Unit.component';
 
 function WeatherCardsComponent({ weatherCards, isCelsius }) {
   return (
@@ -24,8 +24,8 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
             <div className="WeatherCard__Weekday">{weekday}</div>
             <div className="WeatherCard__Date">{date}</div>
             <hr />
-            <CardsUnitComponent label="High temp: " value={highestTemp} isCelsius={isCelsius} />
-            <CardsUnitComponent label="Low temp: " value={lowestTemp} isCelsius={isCelsius} />
+            <UnitComponent label="High temp: " value={highestTemp} isCelsius={isCelsius} />
+            <UnitComponent label="Low temp: " value={lowestTemp} isCelsius={isCelsius} />
             <div className="WeatherCard__WindLow">
               <b>Max Wind Sp:</b> {highestWind} m/s
             </div>

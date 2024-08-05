@@ -1,13 +1,13 @@
 import React from 'react';
 import './CurrentWeather.scss';
 import PropTypes from 'prop-types';
-import { CurrentUnitComponent } from '../Unit/Unit.component';
+import { UnitComponent } from '../Unit/Unit.component';
 
 function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
   return (
     <div className="CurrentWeather">
-      <CurrentUnitComponent label="High Temp: " value={currentWeather.highestTemp} isCelsius={isCelsius} toggleUnit={toggleUnit} /> 
-      <CurrentUnitComponent label="Low Temp: " value={currentWeather.lowestTemp} isCelsius={isCelsius} toggleUnit={toggleUnit} /> 
+      <UnitComponent label="High Temp: " value={currentWeather.highestTemp} isCelsius={isCelsius} toggleUnit={toggleUnit} /> 
+      <UnitComponent label="Low Temp: " value={currentWeather.lowestTemp} isCelsius={isCelsius} toggleUnit={toggleUnit} /> 
       <div className="CurrentWeather__WindHigh">
         <b>Max Wind Sp:</b> {currentWeather.highestWind} m/s
       </div>
