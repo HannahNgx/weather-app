@@ -40,7 +40,7 @@ export function celsiusToFahrenheit(celsius) {
 
 export const getFixedValue = (newValue, currentValue) => {
   return !!newValue ? newValue.toFixed(2) : currentValue;
-};
+}
 
 export function formatWeekday(sol) {
   const remainder = sol % 7;
@@ -54,4 +54,11 @@ export function formatWeekday(sol) {
       'Sol Saturni',
   ];
   return weekDays[remainder];
+}
+
+export function formatTemperature(temp, isCelsius) {
+  const temperature = isCelsius
+    ? temp
+    : getFixedValue(celsiusToFahrenheit(temp));
+  return temperature;
 }

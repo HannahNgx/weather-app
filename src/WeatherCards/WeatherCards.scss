@@ -40,9 +40,10 @@
     color: $pressure-color;
   }
   .WeatherCard__Unit {
-    &.NotSelected {
-      font-weight: bold;
-    }
+    color: inherit;
+  }
+  .WeatherCard__Unit--selected {
+    font-weight: bold;
   }
 }
 

@@ -1,53 +1,13 @@
 import React from 'react';
 import './CurrentWeather.scss';
 import PropTypes from 'prop-types';
-import { celsiusToFahrenheit } from '../helpers';
-import { getFixedValue } from '../helpers';
+import { CurrentUnitComponent } from '../Unit/Unit.component';
 
 function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
-  const highTempCelsius = currentWeather.highestTemp;
-  const lowTempCelsius = currentWeather.lowestTemp;
-  const highTempFahrenheit = getFixedValue(
-    celsiusToFahrenheit(highTempCelsius),
-  );
-  const lowTempFahrenheit = getFixedValue(celsiusToFahrenheit(lowTempCelsius));
-
   return (
     <div className="CurrentWeather">
-      <div className="CurrentWeather__TempHigh">
-        <b>High Temp: </b>{' '}
-        {isCelsius ? highTempCelsius : highTempFahrenheit}
-        <button 
-          className={`CurrentWeather__Unit ${isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
-          onClick={toggleUnit}
-        >
-          ºC
-        </button>
-        /
-        <button 
-          className={`CurrentWeather__Unit ${!isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
-          onClick={toggleUnit}
-        >
-          ºF
-        </button>
-      </div>
-      <div className="CurrentWeather__TempLow">
-        <b>Low Temp:</b>{' '}
-        {isCelsius ? lowTempCelsius : lowTempFahrenheit}
-        <button
-          className={`CurrentWeather__Unit ${isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
-          onClick={toggleUnit}
-        >
-          ºC
-        </button>
-        /
-        <button
-          className={`CurrentWeather__Unit ${!isCelsius ? 'CurrentWeather__Unit--not-selected' : ''}`}
-          onClick={toggleUnit}
-        >
-          ºF
-        </button>
-      </div>
+      <CurrentUnitComponent label="High Temp: " value={currentWeather.highestTemp} isCelsius={isCelsius} toggleUnit={toggleUnit} /> 
+      <CurrentUnitComponent label="Low Temp: " value={currentWeather.lowestTemp} isCelsius={isCelsius} toggleUnit={toggleUnit} /> 
       <div className="CurrentWeather__WindHigh">
         <b>Max Wind Sp:</b> {currentWeather.highestWind} m/s
       </div>
