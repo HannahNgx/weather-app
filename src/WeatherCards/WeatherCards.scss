@@ -6,7 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: $margin-larger;
-  margin-top: $margin-small;
+  margin-top: $margin-default;
 }
 
 .WeatherCard {
@@ -18,9 +18,23 @@
   font-size: $font-large;
   padding-top: $margin-larger;
   padding-bottom: $margin-larger;
-  .WeatherCard__Weekday {
-    font-weight: $font-weight-semi-bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .WeatherCard__Header {
+    display: flex;
+    align-items: center;
+
+    .WeatherCard__Weekday {
+      font-weight: $font-weight-semi-bold;
+    }
+
+    .WeatherCard__InfoButton {
+      margin-left: $margin-small;
+      border-radius: 50%;
+    }
   }
+
   .WeatherCard__Date {
     font-weight: $font-weight-light;
   }
@@ -39,11 +53,8 @@
     font-style: italic;
     color: $pressure-color;
   }
-  .WeatherCard__Unit {
-    color: inherit;
-  }
-  .WeatherCard__Unit--selected {
-    font-weight: bold;
+  .WeatherCard__Rec {
+    font-size: $font-medium;
   }
 }
 
