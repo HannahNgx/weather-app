@@ -7,13 +7,13 @@ function CurrentWeatherComponent({ currentWeather, isCelsius, toggleUnit }) {
   return (
     <div className="CurrentWeather">
       <UnitComponent
-        label="High Temp: "
+        label="High Temp:"
         value={currentWeather.highestTemp}
         isCelsius={isCelsius}
         toggleUnit={toggleUnit}
       />
       <UnitComponent
-        label="Low Temp: "
+        label="Low Temp:"
         value={currentWeather.lowestTemp}
         isCelsius={isCelsius}
         toggleUnit={toggleUnit}

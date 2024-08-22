@@ -49,12 +49,12 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
             ) : (
               <React.Fragment>
                 <UnitComponent
-                  label="High temp: "
+                  label="High temp:"
                   value={highestTemp}
                   isCelsius={isCelsius}
                 />
                 <UnitComponent
-                  label="Low temp: "
+                  label="Low temp:"
                   value={lowestTemp}
                   isCelsius={isCelsius}
                 />

@@ -6,6 +6,9 @@
   font-size: inherit;
   font-style: italic;
   color: $temperature-color;
+  .UnitComponent__Value {
+    margin-left: $margin-smaller;
+  }
   .UnitComponent__Unit {
     background: none;
     color: inherit;

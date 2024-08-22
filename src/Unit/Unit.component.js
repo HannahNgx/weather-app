@@ -19,7 +19,7 @@ export function UnitComponent({ label, value, isCelsius, toggleUnit }) {
   return (
     <div className="UnitComponent">
       <b>{label}</b>
-      {isCelsius ? value : fValue}
+      <span className="UnitComponent__Value">{isCelsius ? value : fValue}</span>
       <TempComponentWrapper
         className={`UnitComponent__Unit ${isCelsius ? 'UnitComponent__Unit--selected' : ''}`}
         {...tempComponentProps}
