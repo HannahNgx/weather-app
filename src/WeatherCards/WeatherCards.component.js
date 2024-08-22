@@ -47,7 +47,7 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
                 }}
               />
             ) : (
-              <>
+              <React.Fragment>
                 <UnitComponent
                   label="High temp: "
                   value={highestTemp}
@@ -70,7 +70,7 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
                 <div className="WeatherCard__PreHigh">
                   <b>Low Pre:</b> {lowestPre} Pa
                 </div>
-              </>
+                </React.Fragment>
             )}
           </div>
         ),
