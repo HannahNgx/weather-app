@@ -66,22 +66,16 @@ export function formatTemperature(temp, isCelsius) {
 export function recommendationWeather(highestPre, highestTemp) {
   let recommendations = [];
   if (highestTemp < -27) {
-    recommendations.push("It's cold, <br />bring a sweater.");
+    recommendations.push("It's cold, bring a sweater.");
   }
   if (highestTemp >= -27) {
-    recommendations.push(
-      'It’s hot, put on some <br /> sunglasses to make sure  <br /> you’re staying cool.',
-    );
+    recommendations.push("It's hot, put on some sunglasses to make sure you're staying cool.");
   }
   if (highestPre < 778) {
-    recommendations.push(
-      'Atmospheric pressure is low, <br /> keep some <br /> snacks at hand to <br /> avoid feeling dizzy.',
-    );
+    recommendations.push("Atmospheric pressure is low, keep some snacks at hand to avoid feeling dizzy.");
   }
   if (highestPre >= 778) {
-    recommendations.push(
-      'Atmospheric pressure is <br /> high, make sure your <br /> pressurized suit <br /> is correctly sealed and latched.',
-    );
+    recommendations.push("Atmospheric pressure is high, make sure your pressurized suit is correctly sealed and latched.");
   }
-  return recommendations.length > 0 ? recommendations.join('<br />') : '.';
+  return recommendations;
 }

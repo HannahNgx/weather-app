@@ -40,13 +40,13 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
             <div className="WeatherCard__Date">{date}</div>
             <hr />
             {activeCardIndex === index ? (
-              <div
-                className="WeatherCard__Rec"
-                dangerouslySetInnerHTML={{
-                  __html: recommendationWeather(highestPre, highestTemp),
-                }}
-              />
-            ) : (
+                <div className="WeatherCard__Rec">
+                    <ul>{ recommendationWeather(highestPre, highestTemp).map((recommendationLine, index)=>(
+                      <li key={index}>{recommendationLine}</li>
+                    )
+                    ) }</ul>
+                </div>
+              ) : (
               <React.Fragment>
                 <UnitComponent
                   label="High temp:"
@@ -59,16 +59,16 @@ function WeatherCardsComponent({ weatherCards, isCelsius }) {
                   isCelsius={isCelsius}
                 />
                 <div className="WeatherCard__WindLow">
-                  <b>Max Wind Sp:</b> {highestWind} m/s
+                  <strong>Max Wind Sp:</strong> {highestWind} m/s
                 </div>
                 <div className="WeatherCard__WindHigh">
-                  <b>Min Wind Sp:</b> {lowestWind} m/s
+                  <strong>Min Wind Sp:</strong> {lowestWind} m/s
                 </div>
                 <div className="WeatherCard__PreLow">
-                  <b>High Pre:</b> {highestPre} Pa
+                  <strong>High Pre:</strong> {highestPre} Pa
                 </div>
                 <div className="WeatherCard__PreHigh">
-                  <b>Low Pre:</b> {lowestPre} Pa
+                  <strong>Low Pre:</strong> {lowestPre} Pa
                 </div>
                 </React.Fragment>
             )}
